@@ -34,6 +34,7 @@ public class Main {
                 return new Hawk();
 
         }
-        return null;
+        // return null; With new animal it will not throw an error instead it will give you default animal sound and null name
+        return new Animal();
     }
 }
