@@ -3,9 +3,12 @@ package com.theironyard;
 public class Main {
 
     public static void main(String[] args) {
-        Dog d = new Dog();
-        Snake s = new Snake();
-        Hawk h = new Hawk();
+        Animal d = createAnimal("Dog");
+        // Dog d = new Dog();
+        Animal s = createAnimal("Snake");
+        //Snake s = new Snake();
+        Animal h = createAnimal("Hawk");
+        //Hawk h = new Hawk();
 
         d.makeSound();
         s.makeSound();
@@ -15,5 +18,22 @@ public class Main {
         System.out.println(s);
         System.out.println(h);
 
+    }
+
+    // Creating Factory Method
+
+    public static Animal createAnimal(String name) {
+        switch (name) {
+            case "Dog":
+                return new Dog();
+
+            case "Snake":
+                return new Snake();
+
+            case "Hawk":
+                return new Hawk();
+
+        }
+        return null;
     }
 }
