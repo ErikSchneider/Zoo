@@ -10,6 +10,23 @@ public class Main {
         Animal h = createAnimal("Hawk");
         //Hawk h = new Hawk();
 
+        // anonymous class
+        Animal a = new Reptile() {
+            @Override
+            public void makeSound() {
+                System.out.println("Croak!");
+            }
+        };
+
+        a.name = "Alligator";
+
+        // anonymous function a.k.a lambda
+        Runnable r = () -> {
+            System.out.println("Hello from lambda");
+        };
+        sayHello(r);
+
+
         d.makeSound();
         s.makeSound();
         h.makeSound();
@@ -36,5 +53,11 @@ public class Main {
         }
         // return null; With new animal it will not throw an error instead it will give you default animal sound and null name
         return new Animal();
+    }
+
+    public static void sayHello(Runnable runnable) {
+        System.out.println("Hello!");
+        runnable.run();
+
     }
 }
